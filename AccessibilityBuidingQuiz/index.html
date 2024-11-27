@@ -1,48 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" />
-    <title>Accessibility Quiz</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" /> <!-- הגדרת קידוד התווים UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- הגדרה שמאפשרת תגובה לגודל מסך -->
+    <meta name="description" content="freeCodeCamp Accessibility Quiz practice project" /> <!-- תיאור הדף למנועי חיפוש -->
+    <title>Accessibility Quiz</title> <!-- כותרת הדף שמופיעה בלשונית הדפדפן -->
+    <link rel="stylesheet" href="styles.css" /> <!-- קישור לקובץ CSS חיצוני -->
   </head>
   <body>
+    <!-- אלמנט header: מכיל את הלוגו, הכותרת ותפריט הניווט -->
     <header>
-      <img id="logo" alt="freeCodeCamp" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg">
-      <h1>HTML/CSS Quiz</h1>
+      <img id="logo" alt="freeCodeCamp" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"> <!-- לוגו -->
+      <h1>HTML/CSS Quiz</h1> <!-- כותרת ראשית של הדף -->
       <nav>
+        <!-- רשימה של קישורים לקטעים שונים בדף -->
         <ul>
-          <li><a href="#student-info">INFO</a></li>
-          <li><a href="#html-questions">HTML</a></li>
-          <li><a href="#css-questions">CSS</a></li>
+          <li><a href="#student-info">INFO</a></li> <!-- קישור לקטע "Student Info" -->
+          <li><a href="#html-questions">HTML</a></li> <!-- קישור לקטע "HTML" -->
+          <li><a href="#css-questions">CSS</a></li> <!-- קישור לקטע "CSS" -->
         </ul>
       </nav>
     </header>
     <main>
+      <!-- טופס: השאלות ופרטי המשתמש נשלחים לכתובת -->
       <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
-        <section role="region" aria-labelledby="student-info">
-          <h2 id="student-info">Student Info</h2>
+        <!-- קטע פרטי משתמש -->
+        <section role="region" aria-labelledby="student-info"> <!-- מגדיר אזור (region) לנגישות -->
+          <h2 id="student-info">Student Info</h2> <!-- כותרת של קטע פרטי המשתמש -->
           <div class="info">
-            <label></label>
-            <input />
+            <label for="student-name">Name:</label> <!-- תווית לשדה שם -->
+            <input type="text" name="student-name" id="student-name" /> <!-- שדה להזנת שם -->
           </div>
           <div class="info">
-            <label></label>
-            <input />
+            <label for="student-email">Email:</label> <!-- תווית לשדה אימייל -->
+            <input type="email" name="student-email" id="student-email" /> <!-- שדה להזנת אימייל -->
           </div>
           <div class="info">
-            <label></label>
-            <input />
+            <label for="birth-date">Date of Birth:</label> <!-- תווית לשדה תאריך לידה -->
+            <input type="date" name="birth-date" id="birth-date" /> <!-- שדה להזנת תאריך לידה -->
           </div>
         </section>
-        <section role="region" aria-labelledby="html-questions">
-          <h2 id="html-questions">HTML</h2>
+        
+        <!-- קטע שאלות HTML -->
+        <section role="region" aria-labelledby="html-questions"> <!-- מגדיר אזור לשאלות HTML -->
+          <h2 id="html-questions">HTML</h2> <!-- כותרת של קטע HTML -->
+          
+          <!-- שאלה ראשונה -->
+          <div class="question-block">
+            <h3><span class="sr-only">Question</span>1</h3> <!-- כותרת שאלה עם טקסט נסתר לקוראי מסך -->
+            <fieldset class="question" name="html-question-one"> <!-- קבוצת שדות לשאלה -->
+              <legend>The legend element represents a caption for the content of its parent fieldset element</legend> <!-- כותרת קבוצת השדה -->
+              <ul class="answers-list"> <!-- רשימת תשובות -->
+                <li>
+                  <label for="q1-a1">
+                    <input type="radio" id="q1-a1" name="q1" value="true" /> <!-- תשובה אפשרית -->
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q1-a2">
+                    <input type="radio" id="q1-a2" name="q1" value="false" /> <!-- תשובה אפשרית -->
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+
+          <!-- שאלה שנייה -->
+          <div class="question-block">
+            <h3><span class="sr-only">Question</span>2</h3> <!-- כותרת שאלה עם טקסט נסתר לקוראי מסך -->
+            <fieldset class="question" name="html-question-two"> <!-- קבוצת שדות לשאלה -->
+              <legend>A label element nesting an input element is required to have a for attribute with the same value as the input's id</legend> <!-- כותרת קבוצת השדה -->
+              <ul class="answers-list"> <!-- רשימת תשובות -->
+                <li>
+                  <label for="q2-a1">
+                    <input type="radio" id="q2-a1" name="q2" value="true" /> <!-- תשובה אפשרית -->
+                    True
+                  </label>
+                </li>
+                <li>
+                  <label for="q2-a2">
+                    <input type="radio" id="q2-a2" name="q2" value="false" /> <!-- תשובה אפשרית -->
+                    False
+                  </label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
         </section>
-        <section role="region" aria-labelledby="css-questions">
-          <h2 id="css-questions">CSS</h2>
+
+        <!-- קטע שאלות CSS -->
+        <section role="region" aria-labelledby="css-questions"> <!-- מגדיר אזור לשאלות CSS -->
+          <h2 id="css-questions">CSS</h2> <!-- כותרת של קטע CSS -->
+          <div class="formrow">
+            <div class="question-block">
+              <label for="selector">Can the CSS margin property accept negative values?</label> <!-- שאלה -->
+            </div>
+            <div class="answer">
+              <select name="selector" id="selector" required> <!-- רשימה נפתחת -->
+                <option value="">Select an option</option> <!-- אפשרות ברירת מחדל -->
+                <option value="yes">Yes</option> <!-- אפשרות תשובה -->
+                <option value="no">No</option> <!-- אפשרות תשובה -->
+              </select>
+            </div>
+            <div class="question-block">
+              <label for="css-textarea">Do you have any questions:</label> <!-- שאלה -->
+            </div>
+            <div class="answer">
+              <textarea id="css-textarea" name="css-questions" rows="5" cols="24"></textarea> <!-- שדה טקסט ארוך -->
+            </div>
+          </div>
         </section>
+
+        <!-- כפתור שליחה -->
+        <button type="submit">Send</button> <!-- כפתור לשליחת הטופס -->
       </form>
     </main>
+
+    <!-- אזור footer -->
+    <footer>
+      <address>
+        <a href="https://freecodecamp.org">freeCodeCamp</a><br /> <!-- קישור לאתר -->
+        San Francisco<br /> <!-- עיר -->
+        California<br /> <!-- מדינה -->
+        USA <!-- מדינה -->
+      </address>
+    </footer>
   </body>
 </html>
