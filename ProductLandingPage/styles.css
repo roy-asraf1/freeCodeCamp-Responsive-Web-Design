@@ -1,0 +1,98 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header styles */
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #333;
+    color: white;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+#header-img {
+    max-width: 100px;
+}
+
+#nav-bar {
+    display: flex;
+    gap: 1em;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Main content styles */
+main {
+    padding-top: 80px;
+    padding: 2em;
+}
+
+section {
+    margin: 2em 0;
+}
+
+#video {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Form styles */
+#form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 1em;
+}
+
+#email {
+    padding: 0.5em;
+    font-size: 1em;
+}
+
+#submit {
+    background: #333;
+    color: white;
+    padding: 0.7em;
+    border: none;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background: #555;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #nav-bar {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    #header-img {
+        max-width: 80px;
+    }
+
+    #form {
+        width: 100%;
+    }
+}
